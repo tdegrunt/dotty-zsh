@@ -16,3 +16,10 @@ alias history='fc -l 1'
 alias lsa='ls -lah'
 alias l='ls -la'
 alias ll='ls -l'
+
+alias his='history | grep'
+
+alias st='open -a /Applications/Sublime\ Text\ 2.app'
+alias stt='st .'
+
+alias rspec='nocorrect rspec'

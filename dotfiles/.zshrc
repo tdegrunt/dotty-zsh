@@ -1,16 +1,28 @@
-# Path to your oh-my-zsh configuration.
+# Path to your zsh configuration.
 ZSH=$HOME/.zsh
 
 plugins=(brew git gitflow vagrant ruby rails sublime osx rake cake node)
 
+alias rvm-prompt=$HOME/.rvm/bin/rvm-prompt
+
 source $ZSH/zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/Cellar/subversion/1.7.5/bin:/usr/local/Cellar/git/1.7.10.4/bin:/usr/local/Cellar/ruby/1.9.3-p194/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=./node_modules/.bin
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=$PATH:/Users/tdegrunt/.zsh/nvm/v0.8.14/lib/node_modules/jsdoc/
+export PATH=$PATH:/usr/local/share/python
 
-export VISUAL="subl -w"
-export EDITOR="subl -w"
+export VISUAL="choc -w"
+export EDITOR="choc -w"
+
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r20.0.3
 
 alias glp='echo "\n"; git log --pretty=format:"%h %s (%cn)" --graph'
 
-source $ZSH/nvm/nvm.sh
+source "/Users/tdegrunt/.zsh/nvm/nvm.sh"
+
+[[ -s "/Users/tdegrunt/.rvm/scripts/rvm" ]] && source "/Users/tdegrunt/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+rvm use default >> /dev/null
+
+export PATH=./bin:$PATH
